@@ -6,35 +6,34 @@ import Grid from '@mui/material/Grid';
 import RecipeReviewCard from './RestaurantCard'
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
 }));
 
-export default function BasicGrid() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        marginTop = "100px"
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
->
-        <Grid marginRight = "50px">
-          <RecipeReviewCard></RecipeReviewCard>
-        </Grid>
-        <Grid marginRight = "50px">
-        <RecipeReviewCard></RecipeReviewCard>
-        </Grid>
-        <Grid marginRight = "50px">
-        <RecipeReviewCard></RecipeReviewCard>
-        </Grid>
-      </Grid>
-    </Box>
-  );
+export default function BasicGrid(props: any) {
+
+
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid
+                marginTop="100px"
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+            >
+                {props.recipes.map((recipe:any )=> {
+                    return  (  
+                    <Grid marginRight="50px" marginBottom="50px">
+                    <RecipeReviewCard recipe={recipe} ></RecipeReviewCard>
+                    </Grid>)           
+                })}
+            </Grid>
+        </Box>
+    );
 }
 
 
