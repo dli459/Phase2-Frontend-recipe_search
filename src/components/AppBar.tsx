@@ -20,8 +20,8 @@ export default function ButtonAppBar() {
           >
 
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Food Search
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            RECIPE SEARCH
           </Typography>
           {/* <Button color="inherit">Login</Button> */}
         </Toolbar>

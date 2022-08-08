@@ -38,7 +38,7 @@ export default function RecipeReviewCard(props:any) {
       <CardHeader sx={{height: 60}}
         title={props.recipe.title}
       />
-      <CardMedia sx={{height: 280 , width:280}}
+      <CardMedia sx={{height: 200 , width:280}}
         component="img"
         image={props.recipe.image}
         alt={props.recipe.title}

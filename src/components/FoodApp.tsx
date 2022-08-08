@@ -25,7 +25,7 @@ const FoodApp = (props: any) => {
 
     return (
         <div>
-        <div style={{ marginTop: '20px' }} >
+        <div style={{ marginTop: '50px' }} >
             <TextField label="Search The Recipe" variant="filled" color="secondary" style={{ width: "400px" }} onChange={e => handelInputChange(e)} />
             <LoadingButton loading={loading} variant="outlined" color="secondary" style={{ height: "56px", marginLeft: '10px' }} onClick={handleSearchRecipe}>
                 Search
