@@ -1,17 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import FoodApp from './components/FoodApp'
 import "./App.css"
-import ButtonAppBar from './components/AppBar'
-
+import Main from './components/Main';
+import Login from './components/Login';
+import { Routes, Route, Navigate} from "react-router-dom";
+import ButtonAppBar from './components/AppBar';
+import { useAppDispatch, useAppSelector } from "./store/hooks";
 
 
 function App() {
+
+  const user = useAppSelector(state => state.user);
+  console.log(user);
+
   return (
     <div className="App">
       <ButtonAppBar></ButtonAppBar>
-       <FoodApp></FoodApp>
-       
+
+      <Routes>
+
+        <Route path="/" element={user.id ? <Main></Main>: <Navigate to="/login" /> } />
+        <Route path="/login" element= {user.id ? <Navigate to="/" /> : <Login></Login>} />
+        
+      </Routes>
+
+
     </div>
   );
 }
